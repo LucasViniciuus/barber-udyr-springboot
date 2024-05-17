@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marcar Horário</title>
+<link rel="stylesheet" th:href="@{/style.css}">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+	<div class="fundo">
+		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Barbearia Udyr</a>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" th:href="'v1/inicio'">Cultura da Empresa</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="'v1/listarProdutos'">Comprar
+								Produtos</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="'v1/abrirPaginaAgendamento'">Agendamento</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="carrinho.html">Carrinho</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" th:href="'v1/minhaConta'">Minha
+								Conta</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+
+
+
+
+	<div class="container5">
+		<div class="servicos">
+			<div class="row">
+				<div class="toputo">
+					<h3>Corte</h3>
+					<img th:src="@{/assets/corte.png}" alt="Imagem do Produto 1">
+					<a href="barbeiros.html" class="btn-escolher">Agendar</a>
+				</div>
+				<div class="toputo">
+					<h3>Barba</h3>
+					<img th:src="@{/assets/barba2.png}" alt="Imagem do Produto 2">
+					<a href="barbeiros.html" class="btn-escolher">Agendar</a>
+				</div>
+				<div class="toputo">
+					<h3>Corte + Barba</h3>
+					<img th:src="@{/assets/corte.png}" alt="Imagem do Produto 3">
+					<a href="barbeiros.html" class="btn-escolher">Agendar</a>
+				</div>
+			</div>
+		</div>
+		<div class="row mt-4">
+			<div class="toputo">
+				<h3>Sobrancelha</h3>
+				<img th:src="@{/assets/sobrancelha.png}" alt="Imagem do Produto 4">
+				<a href="barbeiros.html" class="btn-escolher">Agendar</a>
+			</div>
+			<div class="toputo">
+				<h3>Skin Care</h3>
+				<img th:src="@{/assets/skincare.png}" alt="Imagem do Produto 5">
+				<a href="barbeiros.html" class="btn-escolher">Agendar</a>
+			</div>
+			<div class="toputo">
+				<h3>Hidratacao</h3>
+				<img th:src="@{/assets/hidratacion.png}" alt="Imagem do Produto 6">
+				<a href="barbeiros.html" class="btn-escolher">Agendar</a>
+			</div>
+		</div>
+	</div>
+
+
+
+	<img class="image3" th:src="@{/assets/barbearia_fundo.jpeg}" width="">
+
+
+	<footer class="footer">
+		<div class="footer-left">
+			<p>Barbearia Udyr</p>
+			<p>Rua 20 norte LT 01/03 - LJ 02</p>
+			<p>Águas Claras, Brasília DF</p>
+		</div>
+		<div class="footer-middle">
+			<p>Contatos:</p>
+			<p>4002-8922</p>
+			<p>(61) 9 9819-4465</p>
+		</div>
+		<div class="footer-right">
+			<p>Formas de pagamento:</p>
+			<img th:src="@{/assets/visa.png}"><img
+				th:src="@{/assets/mastercard.png}" alt="Mastercard"> <img
+				th:src="@{/assets/pix.png}" alt="Pix">
+		</div>
+	</footer>
+
+</body>
+</html>

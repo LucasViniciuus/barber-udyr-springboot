@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+body {
+    font-family: "Metal Mania";
+    margin:0;
+    
+    
+}
+
+.fundo {
+    font-family: "Metal Mania";
+    background-color: black;
+    padding: 20px;
+    color: white;
+}
+
+
+.container {
+    font-family: "Metal Mania";
+    width: 300px;
+    height: 280px;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px 20px;
+    text-align: center;
+    background-color: rgb(202, 202, 202);
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-family: metal mania;
+}
+
+
+.container2 {
+    font-family: "Metal Mania";
+    width: 250px;
+    height: 200px;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px 20px;
+    text-align: center;
+    background-color: rgb(202, 202, 202);
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-family: metal mania;
+}
+
+.container3 {
+    font-family: "Metal Mania";
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 26vh auto 0;
+    padding: 40px;
+    text-align: center;
+    background-color: rgb(202, 202, 202);
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    
+}
+
+.container01 {
+    font-family: "Metal Mania";
+    width: 800px;
+    height: 900px;
+    max-width: 100%;
+    max-height: auto;
+    margin: 20vh auto 0 ;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(202, 202, 202);
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    margin-bottom: 1000px;
+    
+}
+
+.container5 {
+    font-family: "Metal Mania";
+    width: 800px;
+    max-height: auto;
+    margin: 20vh auto 0 ;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(202, 202, 202);
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-family: "Metal Mania";
+}
+
+
+.card-body {
+    font-family: "Metal Mania";
+    height: 200px;
+}
+
+.navbar-text {
+    font-family: "Metal Mania";
+    padding: 0 10px;
+    font-family: metal mania;
+  }
+
+h1 {
+    font-family: "Metal Mania";
+    margin-bottom: 40px;
+}
+
+p {
+    font-family: "Metal Mania";
+    font-size: small;
+}
+
+.login-form input {
+    font-family: "Metal Mania";
+    width: 80%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: transparent;
+    color: black;
+    box-sizing: border-box;
+}
+
+.login-form a {
+    font-family: "Metal Mania";
+    display: block;
+    text-align: auto;
+    color: black;
+    text-decoration: none;
+}
+
+.login-form button {
+    font-family: "Metal Mania";
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    font-family: "Metal Mania";
+    background-color: #ccc;
+}
+
+.image3 {
+    font-family: "Metal Mania";
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 70px;
+}
+
+
+.dados {
+    font-family: "Metal Mania";
+    font-size: large;
+    font-weight: bold;
+}
+
+nav {
+    font-family: "Metal Mania";
+    background-color: #000;
+}
+
+
+.card {
+    font-family: "Metal Mania";
+    width: 200px ;
+    height: auto;
+    margin: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.texto_cultura {
+    position: relative;
+    margin: auto;
+    color: red;
+    text-align: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-family: "Metal Mania";
+    font-size: 32px;
+    font-weight: lighter;
+    font-style: normal;   
+}
+   
+.texto_cultura img {
+    font-family: "Metal Mania";
+    width: 100%;
+}
+
+.dentro {
+    font-family: "Metal Mania";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 10px;   
+}
+
+.redonda {
+    position: relative;
+    margin: auto;
+}
+
+#corteeee {
+    width: 150px;
+    height: 150px;
+    
+}
+
+#barbaaaa {
+    width: 150px;
+    height: 150px;
+}
+
+
+#cortebarbaaaa{
+    width: 150px;
+    height: 150px;
+}
+
+#rocklee{
+    width: 150px;
+    height: 150px;
+}
+
+#skincareeee {
+    width: 150px;
+    height: 150px;
+}
+
+#hidratacione{
+    width: 150px;
+    height: 150px;
+}
+
+
+
+
+.servicos {
+    text-align: center;
+    flex: 1;
+    margin: 10px;
+}
+
+.footer {
+    margin: 4;
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    
+    font-size: 16px;
+}
+
+.footer-left,
+.footer-middle,
+.footer-right {
+    flex: 1;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer-right img {
+    width: 45px;
+    margin-left: 10px;
+}
+
+
+.container02 {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+
+.informacoes-pessoais, .servicos-agendados, .produtos-comprados {
+    margin-bottom: 40px;
+}
+
+.perfil {
+    text-align: center;
+}
+
+.perfil img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.dados {
+    margin-top: 10px;
+}
+
+.servico, .produto {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.container4 {
+    font-family: "Metal Mania";
+    width: 500px;
+    height: 280px;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px 20px;
+    text-align: center;
+    background-color: rgb(202, 202, 202);
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-family: metal mania;
+}
+
+h2 {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+select, input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.botao-agendar {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.botao-agendar:hover {
+    background-color: #ff0000; 
+}
+
+
+
+h3 {
+    font-size: 24px;
+}
+
+.barbeiros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.barbeiro {
+    text-align: center;
+    flex: 1;
+    margin: 10px;
+}
+
+.barbeiro img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.barbeiro h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.barbeiro p {
+    font-style: italic;
+    color: #555;
+}
+
+.btn-escolher {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-escolher:hover {
+    background-color: #ff0000; 
+}
+
+.row {
+    display: flex; /* Torna os elementos filhos flexíveis */
+    justify-content: space-around; /* Alinha os elementos horizontalmente com espaçamento igual */
+}
+
+.servicos {
+    margin-top: 20px; /* Margem superior para separar dos elementos acima */
+}
+
+.toputo {
+    text-align: center; /* Alinha o conteúdo dentro de cada div ao centro */
+    flex: 1; /* Define que cada elemento filho (div) ocupará a mesma quantidade de espaço dentro do flex container */
+    margin: 0 10px; /* Margem horizontal para espaçamento entre os elementos */
+}
+
+.toputo h3 {
+    margin-bottom: 10px; /* Margem inferior para separar o título da imagem */
+}
+
+.toputo img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do seu contêiner */
+}
+
+.btn-escolher {
+    display: block; /* Faz com que o link seja exibido como bloco para ocupar a largura total */
+    margin-top: 10px; /* Margem superior para separar o link do conteúdo acima */
+    text-decoration: none; /* Remove sublinhado padrão dos links */
+    padding: 5px 10px; /* Adiciona um pouco de espaçamento interno ao redor do link */
+    background-color: #007bff; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    border-radius: 5px; /* Borda arredondada para o botão */
+}
+
+.toputo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
