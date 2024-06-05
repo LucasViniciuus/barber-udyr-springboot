@@ -5,30 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login - Barbearia Udyr</title>
 <link rel="stylesheet" th:href="@{/style.css}">
-
-
-
 </head>
 <body>
 	<div class="fundo">
 		<h1>Barbearia Udyr</h1>
 	</div>
 	<div class="container">
-		<h1>LOGIN</h1>
-		<div class="login-form">
-			<input type="email" placeholder="Email" id="email" required>
-			<input type="password" placeholder="Senha" id="password" required>
-			<div style="display: flex; justify-content: space-around;">
-				<a th:href="'esqueciSenha'" class="forgot-password">Esqueci a
-					senha</a> <a th:href="'abrirPaginaRegistro'">Registre-se</a>
+		<form th:action="@{/v1/verificarCredenciais}" th:object="${loginData}"
+			method="post">
+			<h1>LOGIN</h1>
+			<div class="login-form">
+				<input type="email" placeholder="Email" id="email" name="email"
+					required> <input type="password" placeholder="Senha"
+					id="password" name="password" required>
+				<div style="display: flex; justify-content: space-around;">
+					<a th:href="'esqueciSenha'" class="forgot-password">Esqueci a
+						senha</a> <a th:href="'abrirPaginaRegistro'">Registre-se</a>
+				</div>
+				<br>
+				<button type="submit">Autenticar</button>
 			</div>
-
-			<br> <a th:href="'verificarCredenciais'">Entrar</a>
-
+		</form>
+	</div>
+	<div class="error-container">
+		<div th:if="${mensagemErro != null}" class="alert alert-danger"
+			role="alert">
+			<p th:text="${mensagemErro}"></p>
 		</div>
 	</div>
-
-
 	<img class="image3" th:src="@{/assets/barbearia_fundo.jpeg}" width="">
 
 	<footer class="footer">

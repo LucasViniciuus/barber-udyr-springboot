@@ -14,6 +14,15 @@ body {
     color: white;
 }
 
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    color: red;
+}
+
+
 
 .container {
     font-family: "Metal Mania";

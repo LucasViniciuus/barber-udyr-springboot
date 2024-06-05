@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/v1")
+@RequestMapping("")
 public class IndexController {
 
-	@GetMapping("/inicio")
+	@GetMapping("/index")
 	public ModelAndView abrirPaginaLogin() {
 		return new ModelAndView("index");
 	}
