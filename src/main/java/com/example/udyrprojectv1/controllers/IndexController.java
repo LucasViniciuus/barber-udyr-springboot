@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class IndexController {
 
 	@GetMapping("/index")
-	public ModelAndView abrirPaginaLogin() {
+	public ModelAndView paginaEntrada() {
 		return new ModelAndView("index");
 	}
 }

@@ -4,20 +4,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.udyrprojectv1.entities.Usuario;
 import com.example.udyrprojectv1.entities.dtos.LoginData;
+import com.example.udyrprojectv1.repositories.UserRepository;
+import com.example.udyrprojectv1.services.HashService;
 import com.example.udyrprojectv1.services.UserService;
 
 @RestController
-@RequestMapping("v1")
+@RequestMapping("")
 public class AuthController {
 
-	@Autowired	
+	@Autowired
 	private UserService userService;
+
+	@Autowired
+	private HashService hashService;
+
+	@Autowired
+	private UserRepository userRepository;
 
 	@GetMapping("/abrirPaginaRegistro")
 	public ModelAndView abrirPaginaRegistro() {
@@ -25,8 +34,12 @@ public class AuthController {
 	}
 
 	@PostMapping("/salvarRegistro")
-	public ModelAndView salvarRegistro() {
-		return null; // em construção
+	public ModelAndView salvarRegistro(@RequestBody Usuario usuario) {
+
+		usuario.setPassword(hashService.hashSenha(usuario.getPassword()));
+		userRepository.save(usuario);
+		return new ModelAndView("index");
+
 	}
 
 	@GetMapping("/abrirPaginaLogin")
@@ -36,29 +49,25 @@ public class AuthController {
 	}
 
 	@PostMapping("/verificarCredenciais")
-	public ModelAndView verificarCredenciais(LoginData data) {
-		ModelAndView modelAndView = new ModelAndView();
-		if (data != null) {
-			Usuario usuarioExiste = userService.usuarioExiste(data.getEmail());
-			if (usuarioExiste != null) {
-				Boolean testaCredenciais = userService.verificaCredenciais(usuarioExiste, data);
-				if (testaCredenciais) {
-					modelAndView.setViewName("redirect:/v1/inicio");
-					return modelAndView;
+	public ModelAndView verificarCredenciais(@RequestBody LoginData credentials) {
+		ModelAndView mv = new ModelAndView();
+		if (credentials != null) {
+			Usuario usuario = userService.usuarioExiste(credentials.getEmail());
+			if (usuario != null) {
+				if (hashService.verificarCredenciais(credentials.getPassword(), usuario.getPassword())) {
+					return new ModelAndView("redirect:/index");
 				}
-				modelAndView.addObject("mensagemErro", "Credenciais incorretas. Por favor, tente novamente.");
-			} else {
-				modelAndView.addObject("mensagemErro", "Usuário não encontrado. Por favor, registre-se.");
+				mv.addObject("mensagemErro", "Credenciais incorretas. Por favor, tente novamente.");
+				return new ModelAndView("login", mv.getModel());
 			}
-		} else {
-			modelAndView.addObject("mensagemErro", "Erro ao processar as credenciais. Por favor, tente novamente.");
+			mv.addObject("mensagemErro", "Usuário não encontrado. Por favor, registre-se.");
+			return new ModelAndView("login", mv.getModel());
 		}
-		modelAndView.setViewName("login");
-		return modelAndView;
+		return mv.addObject("mensagemErro", "Erro ao processar as credenciais. Por favor, tente novamente.");
 	}
 
 	@GetMapping("/esqueciSenha")
 	public ModelAndView esqueciSenha() {
-		return new ModelAndView("senhaEsquecida"); // em construção
+		return new ModelAndView("senhaEsquecida");
 	}
 }
