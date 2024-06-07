@@ -1,8 +1,10 @@
 package com.example.udyrprojectv1.controllers;
 
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +16,7 @@ import com.example.udyrprojectv1.entities.dtos.LoginData;
 import com.example.udyrprojectv1.repositories.UserRepository;
 import com.example.udyrprojectv1.services.HashService;
 import com.example.udyrprojectv1.services.UserService;
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 
 @RestController
 @RequestMapping("")
@@ -29,16 +32,20 @@ public class AuthController {
 	private UserRepository userRepository;
 
 	@GetMapping("/abrirPaginaRegistro")
-	public ModelAndView abrirPaginaRegistro() {
-		return new ModelAndView("register");
+	public ModelAndView abrirPaginaRegistro(ModelMap model) {
+		model.addAttribute("registro", new Usuario());
+		return new ModelAndView("register", model);
 	}
 
 	@PostMapping("/salvarRegistro")
-	public ModelAndView salvarRegistro(@RequestBody Usuario usuario) {
-
-		usuario.setPassword(hashService.hashSenha(usuario.getPassword()));
-		userRepository.save(usuario);
-		return new ModelAndView("index");
+	public ModelAndView salvarRegistro(@ModelAttribute("registro") Usuario usuario) {
+		Usuario usuarioExist = userRepository.findUsuarioByEmailAndCpf(usuario.getEmail(), usuario.getCpf());
+		if (usuarioExist == null) {
+			usuario.setPassword(hashService.hashSenha(usuario.getPassword()));
+			userRepository.save(usuario);
+			return new ModelAndView("index");
+		}
+		return new ModelAndView("register");
 
 	}
 
@@ -49,7 +56,7 @@ public class AuthController {
 	}
 
 	@PostMapping("/verificarCredenciais")
-	public ModelAndView verificarCredenciais(@RequestBody LoginData credentials) {
+	public ModelAndView verificarCredenciais(LoginData credentials) {
 		ModelAndView mv = new ModelAndView();
 		if (credentials != null) {
 			Usuario usuario = userService.usuarioExiste(credentials.getEmail());

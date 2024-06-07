@@ -7,11 +7,31 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
 	rel="stylesheet">
+<style>
+@import
+	url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap')
+	;
+
+.bg-body-custom {
+	background-color: #2E0D23;
+	font-family: 'Metal Mania', Arial, sans-serif;
+}
+
+body {
+	background-color: #35122E;
+}
+
+* {
+	color: #ffffff !important; /* Cor branca para os links */
+}
+</style>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg bg-body-tertiary">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#">Barberaria Udyr</a>
+	<nav class="navbar navbar-expand-lg bg-body-custom">
+		<div class="container">
+			<img th:src="@{/assets/teste01.png}"
+				style="width: 30px; margin-right: 3px"> <a
+				class="navbar-brand" th:href="'index'"> Barberaria Udyr</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -21,55 +41,195 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="#">Home</a></li>
+						aria-current="page" th:href="'index'">Home</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">Quero
 							meu horário</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">Produtos</a>
 					</li>
 				</ul>
+				<div class="d-flex">
+					<ul class="navbar-nav mb-2 mb-lg-0">
+						<li class="nav-item"><a class="nav-link"
+							th:href="'abrirPaginaLogin'">Login</a></li>
+						<li class="nav-item"><a class="nav-link"
+							th:href="'abrirPaginaRegistro'">Registre-se</a></li>
+					</ul>
+				</div>
+
 			</div>
 		</div>
 	</nav>
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<div id="carouselExampleIndicators" class="carousel slide">
+					<div class="carousel-indicators">
+						<button type="button" data-bs-target="#carouselExampleIndicators"
+							data-bs-slide-to="0" class="active" aria-current="true"
+							aria-label="Slide 1"></button>
+						<button type="button" data-bs-target="#carouselExampleIndicators"
+							data-bs-slide-to="1" aria-label="Slide 2"></button>
+						<button type="button" data-bs-target="#carouselExampleIndicators"
+							data-bs-slide-to="2" aria-label="Slide 3"></button>
+					</div>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img th:src="@{/assets/test2.png}" class="d-block w-100"
+								alt="...">
+						</div>
+						<div class="carousel-item">
+							<img th:src="@{/assets/test1.jpg}" class="d-block w-100"
+								alt="...">
+						</div>
+						<div class="carousel-item">
+							<img th:src="@{/assets/test1.jpg}" class="d-block w-100"
+								alt="...">
+						</div>
+					</div>
+					<button class="carousel-control-prev" type="button"
+						data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button"
+						data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
 	<div class="container">
-		<p>A</p>
+		<div class="d-flex justify-content-center mt-5">
+			<h1 style="font-family: 'Metal Mania', Arial, sans-serif;">NOSSOS
+				SERVIÇOS</h1>
+		</div>
+		<div class="row justify-content-between mt-3 align-items-stretch">
+			<!-- Card 1 -->
+			<div class="col-md-3">
+				<div class="card bg-dark text-light mb-3" style="width: 18rem;">
+					<img th:src="@{/assets/barba2.png}" class="card-img-top"
+						style="height: 200px; object-fit: cover;">
+					<div class="card-body">
+						<h5 class="card-title">Corte de Barba</h5>
+						<p class="card-text">Descrição do serviço de corte de barba.</p>
+					</div>
+				</div>
+			</div>
+			<!-- Card 2 -->
+			<div class="col-md-3">
+				<div class="card bg-dark text-light mb-3" style="width: 18rem;">
+					<img th:src="@{/assets/hidratacion.png}" class="card-img-top"
+						style="height: 200px; object-fit: cover;">
+					<div class="card-body">
+						<h5 class="card-title">Hidratação Facial</h5>
+						<p class="card-text">Descrição do serviço de hidratação
+							facial.</p>
+					</div>
+				</div>
+			</div>
+			<!-- Card 3 -->
+			<div class="col-md-3">
+				<div class="card bg-dark text-light mb-3" style="width: 18rem;">
+					<img th:src="@{/assets/skincare.png}" class="card-img-top"
+						style="height: 200px; object-fit: cover;">
+					<div class="card-body">
+						<h5 class="card-title">Cuidados com a Pele</h5>
+						<p class="card-text">Descrição do serviço de cuidados com a
+							pele.</p>
+					</div>
+				</div>
+			</div>
+			<!-- Card 4 -->
+			<div class="col-md-3">
+				<div class="card bg-dark text-light mb-3" style="width: 18rem;">
+					<img th:src="@{/assets/sobrancelha.png}" class="card-img-top"
+						style="height: 200px; object-fit: cover;">
+					<div class="card-body">
+						<h5 class="card-title">Design de Sobrancelha</h5>
+						<p class="card-text">Descrição do serviço de design de
+							sobrancelha.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row justify-content-between mt-3 align-items-stretch">
+			<!-- Card 1 -->
+			<div class="col-md-3">
+				<div class="card bg-dark text-light mb-3" style="width: 18rem;">
+					<img th:src="@{/assets/barba2.png}" class="card-img-top"
+						style="height: 200px; object-fit: cover;">
+					<div class="card-body">
+						<h5 class="card-title">Corte de Barba</h5>
+						<p class="card-text">Descrição do serviço de corte de barba.</p>
+					</div>
+				</div>
+			</div>
+			<!-- Card 2 -->
+			<div class="col-md-3">
+				<div class="card bg-dark text-light mb-3" style="width: 18rem;">
+					<img th:src="@{/assets/hidratacion.png}" class="card-img-top"
+						style="height: 200px; object-fit: cover;">
+					<div class="card-body">
+						<h5 class="card-title">Hidratação Facial</h5>
+						<p class="card-text">Descrição do serviço de hidratação
+							facial.</p>
+					</div>
+				</div>
+			</div>
+			<!-- Card 3 -->
+			<div class="col-md-3">
+				<div class="card bg-dark text-light mb-3" style="width: 18rem;">
+					<img th:src="@{/assets/skincare.png}" class="card-img-top"
+						style="height: 200px; object-fit: cover;">
+					<div class="card-body">
+						<h5 class="card-title">Cuidados com a Pele</h5>
+						<p class="card-text">Descrição do serviço de cuidados com a
+							pele.</p>
+					</div>
+				</div>
+			</div>
+			<!-- Card 4 -->
+			<div class="col-md-3">
+				<div class="card bg-dark text-light mb-3" style="width: 18rem;">
+					<img th:src="@{/assets/sobrancelha.png}" class="card-img-top"
+						style="height: 200px; object-fit: cover;">
+					<div class="card-body">
+						<h5 class="card-title">Design de Sobrancelha</h5>
+						<p class="card-text">Descrição do serviço de design de
+							sobrancelha.</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
+
+
+
 </body>
-<footer class="footer">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4">
-				<h4>Sobre Nós</h4>
-				<p>Somos uma barbearia dedicada a proporcionar a melhor
-					experiência de cuidados masculinos, com profissionais qualificados
-					e produtos de alta qualidade.</p>
-			</div>
-			<div class="col-md-4">
-				<h4>Localização</h4>
-				<p>Rua Barbeiro, 123</p>
-				<p>Bairro Barbearia</p>
-				<p>Cidade dos Barbeiros</p>
-				<p>CEP: 12345-678</p>
-			</div>
-			<div class="col-md-4">
-				<h4>Contato</h4>
-				<p>Telefone: (123) 456-7890</p>
-				<p>Email: info@barbearia.com</p>
-				<p>Siga-nos nas redes sociais:</p>
-				<ul class="list-inline">
-					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<hr>
-				<p class="text-center">© 2024 Barbearia. Todos os direitos
-					reservados.</p>
-			</div>
-		</div>
-	</div>
+<footer class="footer" style="background-color: #2E0D23; color: #FFFFFF; padding: 20px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Contato</h5>
+                <p>Endereço: Taguatinga</p>
+                <p>Telefone: (61) 99353-9176</p>
+                <p>Email: barbeariaudyr@gmail.com</p>
+            </div>
+            <div class="col-md-6">
+                <h5>Redes Sociais</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </footer>
+
 </html>
