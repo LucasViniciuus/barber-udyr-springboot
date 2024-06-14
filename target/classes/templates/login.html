@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logar</title>
+<link
+	href="https://fonts.googleapis.com/css2?family=MetaMania&display=swap"
+	rel="stylesheet">
+<style>
+/* styles.css */
+@import
+	url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap')
+	;
+
+body {
+	font-family: 'Metal Mania', Arial, sans-serif;
+	background-color: #35122E; /* Cinza escuro */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+.container {
+	background-color: #46183c; /* Cinza ainda mais escuro */
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 8px rgb(117, 15, 102);
+	width: 500px;
+}
+
+.form-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+h1 {
+	font-family: 'Metal Mania', Arial, sans-serif;
+	margin-bottom: 30px;
+	color: #ecf0f1; /* Branco claro */
+}
+
+.form {
+	width: 300px;
+}
+
+.form-group {
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.form-group-checkbox {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 15px;
+}
+
+.form-group-checkbox label {
+	margin-left: 5px;
+	color: #ecf0f1;
+}
+
+.form-group label {
+	display: block;
+	margin-bottom: 5px;
+	color: #ecf0f1; /* Branco claro */
+}
+
+.form-group input {
+	font-family: 'Metal Mania', Arial, sans-serif;
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #bdc3c7;
+	border-radius: 5px;
+	box-sizing: border-box;
+	background-color: #ecf0f1; /* Branco claro */
+	color: #2c3e50; /* Cinza escuro */
+}
+
+button {
+	font-family: 'Metal Mania', Arial, sans-serif;
+	width: 100%;
+	padding: 10px;
+	background-color: #13a7ac; /* Vermelho escuro */
+	border: none;
+	border-radius: 5px;
+	color: #ffffff;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+button:hover {
+	background-color: #119499; /* Vermelho ainda mais escuro */
+}
+
+.form-group-checkbox a {
+	color: #ecf0f1; /* Branco claro */
+	text-decoration: underline;
+}
+.error-message {
+    background-color: #e74c3c; /* Vermelho */
+    color: #ffffff; /* Branco */
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="form-container">
+			<h1 style="font-family: 'Metal Mania', Arial, sans-serif;">LOGAR</h1>
+			<form class="form" th:action="@{/verificarCredenciais}"
+				th:object="${loginData}" method="post">
+				<div class="form-group">
+					<label for="email">Email</label> <input type="email" id="email"
+						th:field="*{email}" required>
+				</div>
+				<div class="form-group">
+					<label for="password">Senha</label> <input type="password"
+						id="password" th:field="*{password}" required>
+				</div>
+				<div class="form-group-checkbox">
+					<a href="#">Esqueci a senha</a> <a th:href="'abrirPaginaRegistro'">Registre-se</a>
+				</div>
+				<button type="submit">Logar</button>
+			</form>
+			<div th:if="${mensagemErro}" class="error-message">
+				<p th:text="${mensagemErro}"></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

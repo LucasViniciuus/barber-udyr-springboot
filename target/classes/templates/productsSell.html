@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comprar Produtos</title>
+<link rel="stylesheet" th:href="@{/style.css}">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+	<div class="fundo">
+		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Barbearia Udyr</a>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" th:href="'v1/inicio'">Cultura da Empresa</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="'v1/listarProdutos'">Comprar
+								Produtos</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="'v1/abrirPaginaAgendamento'">Agendamento</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="carrinho.html">Carrinho</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" th:href="'v1/minhaConta'">Minha
+								Conta</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<div class="container01">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card" id="-Shampoo">
+					<img th:src="@{/assets/shampoo.png}" class="produtos">
+					<div class="card-body">
+						<h5 class="card-title">Shampoo Udyr CO.</h5>
+						<p class="card-text">
+							"Nosso famoso shampoo assinatura <br>agora disponível para
+							compra"
+						</p>
+						<a href="javascript:void(0)" class="btn btn-primary"
+							onclick="adicionarAoCarrinho('-Shampoo')">Adicionar ao
+							Carrinho</a>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card" id="-Minoxidil">
+				<img th:src="@{/assets/minoxidil.png}" class="produtos">
+					<div class="card-body">
+						<h5 class="card-title">Minoxidil Udyr CO.</h5>
+						<p class="card-text">
+							"Minoxidil patenteado e testado <br>pela nossa equipe"
+						</p>
+						<a href="javascript:void(0)" class="btn btn-primary"
+							onclick="adicionarAoCarrinho('-Minoxidil')">Adicionar ao
+							Carrinho</a>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card" id="-Loção/ Creme p/ Barba">
+					<img th:src="@{/assets/barba.png}" class="produtos">
+					<div class="card-body">
+						<h5 class="card-title">
+							Loção e Creme p/ Barba <br>Udyr CO.
+						</h5>
+						<p class="card-text">"O cuidado extra que sua barba merece"</p>
+						<a href="javascript:void(0)" class="btn btn-primary"
+							onclick="adicionarAoCarrinho('-Loção/ Creme p/ Barba')">Adicionar
+							ao Carrinho</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row mt-4">
+			<div class="col-md-4">
+				<div class="card" id="-Hidratação">
+					<img th:src="@{/assets/hidratacao.png}" class="produtos">
+					<div class="card-body">
+						<h5 class="card-title">
+							Pró-Hidratação Ativa <br>Udyr CO.
+						</h5>
+						<p class="card-text">
+							"Nutri e hidrata até os mais danificados <br>fios de cabelo"
+						</p>
+						<a href="javascript:void(0)" class="btn btn-primary"
+							onclick="adicionarAoCarrinho('-Hidratação')">Adicionar ao
+							Carrinho</a>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card" id="-Condicionador">
+					<img th:src="@{/assets/condicionador.png}" class="produtos">
+					<div class="card-body">
+						<h5 class="card-title">Condicionador Udyr CO.</h5>
+						<p class="card-text">
+							"Devolve a elasticidade e o brilho <br>aos cabelos"
+						</p>
+						<a href="javascript:void(0)" class="btn btn-primary"
+							onclick="adicionarAoCarrinho('-Condicionador')">Adicionar ao
+							Carrinho</a>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card" id="-Skin Care">
+				<img th:src="@{/assets/skin.png}" class="produtos">
+					<div class="card-body">
+						<h5 class="card-title">Máscara Preta Udyr CO.</h5>
+						<p class="card-text">
+							"Argila preta, carvão ativado, <br>colágeno e vitamina E. <br>Aprovada
+							por especialistas"
+						</p>
+						<a href="javascript:void(0)" class="btn btn-primary"
+							onclick="adicionarAoCarrinho('-Skin Care')">Adicionar ao
+							Carrinho</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function adicionarAoCarrinho(idProduto) {
+			// Recupera o carrinho atual armazenado no localStorage ou inicializa um novo array
+			var carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+			// Adiciona o produto ao carrinho
+			carrinho.push(idProduto);
+
+			// Salva o carrinho atualizado de volta no localStorage
+			localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+			// Redireciona para a página do carrinho
+			window.location.href = 'http://127.0.0.1:5500/carrinho.html';
+		}
+	</script>
+
+	<img class="image3" th:src="@{/assets/barbearia_fundo.jpeg}" width="">
+
+	<footer class="footer">
+		<div class="footer-left">
+			<p>Barbearia Udyr</p>
+			<p>Rua 20 norte LT 01/03 - LJ 02</p>
+			<p>Águas Claras, Brasília DF</p>
+		</div>
+		<div class="footer-middle">
+			<p>Contatos:</p>
+			<p>4002-8922</p>
+			<p>(61) 9 9819-4465</p>
+		</div>
+		<div class="footer-right">
+			<p>Formas de pagamento:</p>
+			<img th:src="@{/assets/visa.png}"><img
+				th:src="@{/assets/mastercard.png}" alt="Mastercard"> <img
+				th:src="@{/assets/pix.png}" alt="Pix">
+		</div>
+	</footer>
+
+
+</body>
+</html>
