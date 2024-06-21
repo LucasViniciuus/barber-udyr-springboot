@@ -1,5 +1,7 @@
 package com.example.udyrprojectv1.controllers;
 
+import com.example.udyrprojectv1.entities.dtos.UserDto;
+import jakarta.servlet.http.HttpSession;
 import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
@@ -56,12 +58,14 @@ public class AuthController {
 	}
 
 	@PostMapping("/verificarCredenciais")
-	public ModelAndView verificarCredenciais(LoginData credentials) {
+	public ModelAndView verificarCredenciais(LoginData credentials, HttpSession session) {
 		ModelAndView mv = new ModelAndView();
 		if (credentials != null) {
 			Usuario usuario = userService.usuarioExiste(credentials.getEmail());
 			if (usuario != null) {
 				if (hashService.verificarCredenciais(credentials.getPassword(), usuario.getPassword())) {
+
+					session.setAttribute("usuario", new UserDto(usuario.getId(), usuario.getName(), usuario.getAge(), usuario.getEmail(), usuario.getCpf()));
 					return new ModelAndView("redirect:/index");
 				}
 				mv.addObject("mensagemErro", "Credenciais incorretas. Por favor, tente novamente.");
@@ -73,8 +77,14 @@ public class AuthController {
 		return mv.addObject("mensagemErro", "Erro ao processar as credenciais. Por favor, tente novamente.");
 	}
 
-	@GetMapping("/esqueciSenha")
+	@GetMapping("/recuperarSenha")
 	public ModelAndView esqueciSenha() {
-		return new ModelAndView("senhaEsquecida");
+		return new ModelAndView("forgotpassword");
+	}
+
+	@GetMapping("/sairDoPerfil")
+	public ModelAndView sairDoPerfil(){
+		ModelAndView mv = new ModelAndView("index");
+		return mv;
 	}
 }
