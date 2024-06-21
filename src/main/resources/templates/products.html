@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <style>
+        @import	url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+        .cabecalho p {
+        margin: 25px;
+        color: #ffffff;
+        text-align: center;
+        font-size: 100px;
+    }
+        .bg-body-custom {
+        background-color: #2E0D23;
+        font-family: 'Metal Mania', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #ffffff !important;
+}
+    .container{
+        padding: 50px;
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .navbar-container {
+        padding: 0;
+        margin: 0;
+        max-width: 100%; /* Ajuste conforme necessário */
+}
+    .main{
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main2 {
+        background-color: #2c042480;
+        width: 75%;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 8px rgb(117, 15, 102);
+    }
+    .botao {
+        font-family: 'Metal Mania', Arial, sans-serif;
+        width: 100%;
+        padding: 10px;
+        background-color: #13a7ac; /* Vermelho escuro */
+        border: none;
+        border-radius: 5px;
+        color: #ffffff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .botao:hover {
+        background-color: #119499; /* Vermelho ainda mais escuro */
+    }
+        .navbar .navbar-brand,
+        .navbar .nav-link {
+            color: #ffffff !important;
+        }
+
+        .navbar .nav-link:hover {
+            color: #f8f9fa !important; /* Optional: change the color on hover to a slightly different shade of white */
+        }
+
+        .navbar .navbar-toggler {
+            color: #ffffff !important;
+            border-color: #ffffff !important;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=MetaMania&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+            integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
+
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+<body style="background-color: #35122e; font-family: 'Metal Mania', Arial, sans-serif">
+<nav class="navbar navbar-expand-lg bg-body-custom">
+    <div class="container navbar-container">
+        <img th:src="@{/assets/teste01.png}"
+             style="width: 30px; margin-right: 3px"> <a
+            class="navbar-brand" th:href="'index'"> Barberaria Udyr</a>
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active"
+                                        aria-current="page" th:href="'index'">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Quero
+                    meu horário</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="'/abrirExibicaoProdutos'">Produtos</a>
+                </li>
+            </ul>
+            <div class="d-flex">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link"
+                                            th:href="'abrirPaginaLogin'">Login</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                                            th:href="'abrirPaginaRegistro'">Registre-se</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<div class="cabecalho">
+    <p>Produtos</p>
+</div>
+<div class="main">
+    <div class="main2">
+        <div class="container">
+            <div class="card" style="width: 18rem; background-color: #2c0424; box-shadow: 0 0 8px rgb(255, 0, 217);">
+                <img th:src="@{/assets/shampoo.png}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-white">Shampoo Udyr CO.</h5>
+                    <p class="card-text text-white ">Nosso famoso shampoo assinatura agora disponível para compra.</p>
+                    <p class="card-text text-white ">Preço: R$ 69,99</p>
+                    <a href="#" data-name="Shampoo-Udyr" data-price="69.99" class="add-to-cart btn btn-primary">Adicionar
+                        ao Carrinho</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem; background-color: #2c0424; box-shadow: 0 0 8px rgb(255, 0, 217);">
+                <img th:src="@{/assets/minoxidil.png}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-white">Minoxidil Udyr CO.</h5>
+                    <p class="card-text text-white ">"Minoxidil patenteado e testado pela nossa equipe"</p>
+                    <p class="card-text text-white ">Preço: R$ 39,99</p>
+                    <a href="#" data-name="Minoxidil-Udyr" data-price="39.99" class="add-to-cart btn btn-primary">Adicionar
+                        ao Carrinho</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem; background-color: #2c0424; box-shadow: 0 0 8px rgb(255, 0, 217);">
+                <img th:src="@{/assets/barba.png}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-white">Loção e Creme p/ Barba Udyr CO.</h5>
+                    <p class="card-text text-white ">O cuidado extra que sua barba merece.</p>
+                    <p class="card-text text-white ">Preço: R$ 11,99</p>
+                    <a href="#" data-name="Loção-Barba" data-price="11.99" class="add-to-cart btn btn-primary">Adicionar
+                        ao Carrinho</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card" style="width: 18rem; background-color: #2c0424; box-shadow: 0 0 8px rgb(255, 0, 217);">
+                <img th:src="@{/assets/hidratacao.png}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-white">Pró-Hidratação Ativa Udyr CO.</h5>
+                    <p class="card-text text-white ">Nutri e hidrata até os mais danificados fios de cabelo</p>
+                    <p class="card-text text-white ">Preço: R$ 109,49</p>
+                    <a href="#" data-name="Pró-Hidratação-Udyr" data-price="109.49" class="add-to-cart btn btn-primary">Adicionar
+                        ao Carrinho</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem; background-color: #2c0424; box-shadow: 0 0 8px rgb(255, 0, 217);">
+                <img th:src="@{/assets/condicionador.png}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-white">Condicionador Udyr CO.</h5>
+                    <p class="card-text text-white ">Devolve a elasticidade e o brilho aos cabelos</p>
+                    <p class="card-text text-white ">Preço: R$ 59,99</p>
+                    <a href="#" data-name="Condicionador-Udyr" data-price="59.99" class="add-to-cart btn btn-primary">Adicionar
+                        ao Carrinho</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem; background-color: #2c0424; box-shadow: 0 0 8px rgb(255, 0, 217);">
+                <img th:src="@{/assets/skin.png}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-white">Máscara Preta Udyr CO.</h5>
+                    <p class="card-text text-white ">Argila preta, carvão ativado, colágeno e vitamina E. Aprovada por
+                        especialistas</p>
+                    <p class="card-text text-white ">Preço: R$ 56,29</p>
+                    <a href="#" data-name="Máscara-Udyr" data-price="56.29" class="add-to-cart btn btn-primary">Adicionar
+                        ao Carrinho</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <button type="button" class="botao" data-toggle="modal" data-target="#cart">Cart (<span
+                    class="total-count"></span>)
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="show-cart table">
+
+                </table>
+                <div>Total price: R$ <span class="total-cart"></span></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="botao">Order now</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+<script>
+    // ************************************************
+// Shopping Cart API
+// ************************************************
+
+var shoppingCart = (function() {
+  // =============================
+  // Private methods and propeties
+  // =============================
+  cart = [];
+  
+  // Constructor
+  function Item(name, price, count) {
+    this.name = name;
+    this.price = price;
+    this.count = count;
+  }
+  
+  // Save cart
+  function saveCart() {
+    sessionStorage.setItem('shoppingCart', JSON.stringify(cart));
+  }
+  
+    // Load cart
+  function loadCart() {
+    cart = JSON.parse(sessionStorage.getItem('shoppingCart'));
+  }
+  if (sessionStorage.getItem("shoppingCart") != null) {
+    loadCart();
+  }
+  
+
+  // =============================
+  // Public methods and propeties
+  // =============================
+  var obj = {};
+  
+  // Add to cart
+  obj.addItemToCart = function(name, price, count) {
+    for(var item in cart) {
+      if(cart[item].name === name) {
+        cart[item].count ++;
+        saveCart();
+        return;
+      }
+    }
+    var item = new Item(name, price, count);
+    cart.push(item);
+    saveCart();
+  }
+  // Set count from item
+  obj.setCountForItem = function(name, count) {
+    for(var i in cart) {
+      if (cart[i].name === name) {
+        cart[i].count = count;
+        break;
+      }
+    }
+  };
+  // Remove item from cart
+  obj.removeItemFromCart = function(name) {
+      for(var item in cart) {
+        if(cart[item].name === name) {
+          cart[item].count --;
+          if(cart[item].count === 0) {
+            cart.splice(item, 1);
+          }
+          break;
+        }
+    }
+    saveCart();
+  }
+
+  // Remove all items from cart
+  obj.removeItemFromCartAll = function(name) {
+    for(var item in cart) {
+      if(cart[item].name === name) {
+        cart.splice(item, 1);
+        break;
+      }
+    }
+    saveCart();
+  }
+
+  // Clear cart
+  obj.clearCart = function() {
+    cart = [];
+    saveCart();
+  }
+
+  // Count cart 
+  obj.totalCount = function() {
+    var totalCount = 0;
+    for(var item in cart) {
+      totalCount += cart[item].count;
+    }
+    return totalCount;
+  }
+
+  // Total cart
+  obj.totalCart = function() {
+    var totalCart = 0;
+    for(var item in cart) {
+      totalCart += cart[item].price * cart[item].count;
+    }
+    return Number(totalCart.toFixed(2));
+  }
+
+  // List cart
+  obj.listCart = function() {
+    var cartCopy = [];
+    for(i in cart) {
+      item = cart[i];
+      itemCopy = {};
+      for(p in item) {
+        itemCopy[p] = item[p];
+
+      }
+      itemCopy.total = Number(item.price * item.count).toFixed(2);
+      cartCopy.push(itemCopy)
+    }
+    return cartCopy;
+  }
+
+  // cart : Array
+  // Item : Object/Class
+      // addItemToCart : Function
+  // removeItemFromCart : Function
+  // removeItemFromCartAll : Function
+  // clearCart : Function
+  // countCart : Function
+  // totalCart : Function
+  // listCart : Function
+  // saveCart : Function
+  // loadCart : Function
+  return obj;
+})();
+
+
+// *****************************************
+// Triggers / Events
+// ***************************************** 
+// Add item
+$('.add-to-cart').click(function(event) {
+  event.preventDefault();
+  var name = $(this).data('name');
+  var price = Number($(this).data('price'));
+  shoppingCart.addItemToCart(name, price, 1);
+  displayCart();
+});
+
+// Clear items
+$('.clear-cart').click(function() {
+  shoppingCart.clearCart();
+  displayCart();
+});
+
+
+function displayCart() {
+  var cartArray = shoppingCart.listCart();
+  var output = "";
+  for(var i in cartArray) {
+    output += "<tr>"
+      + "<td>" + cartArray[i].name + "</td>" 
+      + "<td>(" + cartArray[i].price + ")</td>"
+      + "<td><div class='input-group'><button class='minus-item input-group-addon btn btn-primary' data-name=" + cartArray[i].name + ">-</button>"
+      + "<input type='number' class='item-count form-control' data-name='" + cartArray[i].name + "' value='" + cartArray[i].count + "'>"
+      + "<button class='plus-item btn btn-primary input-group-addon' data-name=" + cartArray[i].name + ">+</button></div></td>"
+      + "<td><button class='delete-item btn btn-danger' style='color: black; margin-top: 8px' data-name=" + cartArray[i].name + ">X</button></td>"
+      + " = " 
+      + "<td>" + cartArray[i].total + "</td>" 
+      +  "</tr>";
+  }
+  $('.show-cart').html(output);
+  $('.total-cart').html(shoppingCart.totalCart());
+  $('.total-count').html(shoppingCart.totalCount());
+}
+
+// Delete item button
+
+$('.show-cart').on("click", ".delete-item", function(event) {
+  var name = $(this).data('name')
+  shoppingCart.removeItemFromCartAll(name);
+  displayCart();
+})
+
+
+// -1
+$('.show-cart').on("click", ".minus-item", function(event) {
+  var name = $(this).data('name')
+  shoppingCart.removeItemFromCart(name);
+  displayCart();
+})
+// +1
+$('.show-cart').on("click", ".plus-item", function(event) {
+  var name = $(this).data('name')
+  shoppingCart.addItemToCart(name);
+  displayCart();
+})
+
+// Item count input
+$('.show-cart').on("change", ".item-count", function(event) {
+   var name = $(this).data('name');
+   var count = Number($(this).val());
+  shoppingCart.setCountForItem(name, count);
+  displayCart();
+});
+
+displayCart();
+
+</script>
+
+</html>

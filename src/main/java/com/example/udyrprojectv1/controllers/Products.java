@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/v1")
+@RequestMapping("")
 public class Products {
 	
-	@GetMapping("/listarProdutos")
-	public ModelAndView listarProdutos() {
-		return new ModelAndView("productsSell");
+	@GetMapping("/abrirExibicaoProdutos")
+	public ModelAndView abrirVisualizaoProdutos() {
+		return new ModelAndView("products");
 	}
 
 }

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil do Usuário</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=MetaMania&amp;display=swap" rel="stylesheet">
+  <style>
+    @import	url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+    body {
+    font-family: 'Metal Mania', Arial, sans-serif;
+	background-color: #35122E;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+.profile-container {
+  background-color: #46183c;
+	padding: 20px;
+  border-radius: 10px;
+	box-shadow: 0 0 8px rgb(117, 15, 102);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+  color: #fff;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-right: 20px;
+}
+
+.profile-info {
+  max-width: 400px;
+}
+
+.profile-info h2 {
+  margin-top: 0;
+}
+
+.profile-info p {
+  margin: 10px 0;
+}
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <div class="profile-picture">
+    </div>
+    <div class="profile-info">
+      <h2><span id="name"></span>Joshua Cunha Logrado</h2>
+      <p>Data de Nascimento: <span id="age">24/02/2003</span></p>
+      <p>E-mail: <span id="email">joshualogrado@email.com</span></p>
+      <p>CPF: <span id="cpf">000.000.000-00</span></p>
+    </div>
+  </div>
+</body>
+</html>
