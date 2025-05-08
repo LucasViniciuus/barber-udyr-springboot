@@ -1,8 +1,14 @@
-**Sistema de barbearia com foco em agendamento de horarios, vendas de produtos e gerenciamento de sua barbearia.**
+# Sistema de barbearia com foco em agendamento de horarios, vendas de produtos e gerenciamento contabil de sua barbearia.**
 
-Tecnologias usadas:
+### O sistema de barbearia inteligente e altamente escalável, venha ser Udyr! 
 
-[X] Spring boot
-[X] Docker
-[X] AWS EC2
-[X] JWT
+#### Nosso sistema conterá as seguintes tecnologias e frameworks:
+
+* [X] Java
+* [X] Spring boot
+* [X] Docker
+* [X] AWS EC2
+* [X] JWT
+* [ ] Spring Data
+* [ ] Kafka
+* [ ] Spring Security
