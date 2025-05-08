@@ -1,4 +1,4 @@
-# Sistema de barbearia com foco em agendamento de horarios, vendas de produtos e gerenciamento contabil de sua barbearia.**
+# Sistema de barbearia com foco em agendamento de horarios, vendas de produtos e gerenciamento contabil de sua barbearia.
 
 ### O sistema de barbearia inteligente e altamente escalável, venha ser Udyr! 
 
