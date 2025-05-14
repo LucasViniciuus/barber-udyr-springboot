@@ -1,3 +1,5 @@
+com\example\udyrprojectv1\controllers\KafkaController.class
+com\example\udyrprojectv1\entities\dtos\UserDto.class
 com\example\udyrprojectv1\controllers\AuthController.class
 com\example\udyrprojectv1\controllers\IndexController.class
 com\example\udyrprojectv1\services\UserService.class
@@ -10,4 +12,6 @@ com\example\udyrprojectv1\entities\dtos\LoginData.class
 com\example\udyrprojectv1\controllers\Products.class
 com\example\udyrprojectv1\services\HashService.class
 com\example\udyrprojectv1\entities\Funcionario.class
+com\example\udyrprojectv1\config\KafkaProducerConfig.class
 com\example\udyrprojectv1\entities\Usuario.class
+com\example\udyrprojectv1\config\KafkaConsumerConfig.class
